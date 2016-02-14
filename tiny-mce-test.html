@@ -1,0 +1,25 @@
+<head>
+  <title>tiny-mce-test</title>
+</head>
+
+<body>
+	{{> hello}}
+</body>
+
+<template name="hello">
+
+	{{#TinyMce init=settings onSave=saveTitle}}
+		<h1 class="editable">{{{reactiveTitle}}}</h1>
+	{{/TinyMce}}
+
+
+	{{#TinyMce init=settings onSave=saveHtmlString}}
+	<div class="editable">
+	  {{{bigHtmlString}}}
+	</div>
+	{{/TinyMce}}
+
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
